@@ -1,0 +1,13 @@
+D:\VS_Practice\BreathingMachine\BreathingMachine\bin\Debug\itextsharp.dll
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\BreathingMachine.Form1.resources
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\BreathingMachine.Form_engineer.resources
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\BreathingMachine.Form_PatientInfo.resources
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\BreathingMachine.csproj.GenerateResource.Cache
+D:\VS_Practice\BreathingMachine\BreathingMachine\bin\Debug\Data_analyser.exe.config
+D:\VS_Practice\BreathingMachine\BreathingMachine\bin\Debug\Data_analyser.exe
+D:\VS_Practice\BreathingMachine\BreathingMachine\bin\Debug\Data_analyser.pdb
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\BreathingMachine.Form_About.resources
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\BreathingMachine.Form_AboutUs_English.resources
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\Data_analyser.Properties.Resources.resources
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\Data_analyser.exe
+D:\VS_Practice\BreathingMachine\BreathingMachine\obj\Debug\Data_analyser.pdb
