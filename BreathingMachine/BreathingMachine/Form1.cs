@@ -2520,10 +2520,12 @@ namespace BreathingMachine
             //初始化，默认用户模式按钮不能点
             this.用户模式ToolStripMenuItem.Enabled = false;
             //初始化语言
-            LanguageMngr.m_language = LANGUAGE.ENGLISH;
             #region
-            //初始化为英文
-            ShowLabelNameByLanguageType(LANGUAGE.ENGLISH);
+            ConfigurMngr mngr = new ConfigurMngr();
+            mngr.LoadCfg();
+            LanguageMngr.m_language = mngr.m_lang;
+            //初始化为客户保留的语言
+            ShowLabelNameByLanguageType(LanguageMngr.m_language);
             #endregion
 
             //初始化基本信息中的各个参数值,都为空
@@ -3749,8 +3751,75 @@ namespace BreathingMachine
 
         }
 
-      
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ConfigurMngr mngr = new ConfigurMngr();
+            mngr.SaveCfg(LanguageMngr.m_language);
+        }
     }
+
+    public class ConfigurMngr 
+    {
+        public LANGUAGE m_lang;
+        public String m_cfgfilePath;
+
+        public ConfigurMngr()
+        {
+            m_cfgfilePath = Environment.CurrentDirectory + @"\Config.bin";
+        }
+
+        public ConfigurMngr(LANGUAGE lang)
+        {
+            m_cfgfilePath = Environment.CurrentDirectory + @"\Config.bin";
+            m_lang = lang;
+        }
+
+        public LANGUAGE GetLangure()
+        {
+            return m_lang;
+        }
+
+        public void LoadCfg()
+        {
+            if (File.Exists(m_cfgfilePath))
+            {
+                FileStream fs = new FileStream(m_cfgfilePath, FileMode.Open);
+                BinaryReader br = new BinaryReader(fs, Encoding.ASCII);
+
+                byte[] bt = new byte[1];
+                while (br.Read(bt, 0, 1) > 0)
+                {
+                    m_lang = (LANGUAGE)(bt[0]);
+                }
+
+                fs.Close();
+                br.Close();
+            }
+            else
+            {
+                m_lang = LANGUAGE.ENGLISH;   //不存cfg文件，就创建一个,默认为英文
+                SaveCfg(LANGUAGE.ENGLISH);
+            }
+        }
+        public void SaveCfg(LANGUAGE lang)
+        {
+            m_lang = lang;
+            FileStream fs = new FileStream(m_cfgfilePath, FileMode.Create);
+            BinaryWriter bw = new BinaryWriter(fs, Encoding.ASCII);
+
+            //Int32 bt = (Int32)(m_lang);
+            //MessageBox.Show(bt.ToString());
+            bw.Write(Convert.ToByte((Int32)m_lang));
+
+            bw.Close();
+            fs.Close();
+        }
+        
+    }
+
+
+
+
     public class FileMngr
     {
         public static bool m_bCreateTestFiles;    //这个仅仅是为了产生测试文件，正式版本将它改成false
