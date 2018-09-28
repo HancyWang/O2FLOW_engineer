@@ -16,7 +16,6 @@ D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\Breathi
 D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\bin\Release\Data_analyser.exe
 D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\bin\Release\Data_analyser.pdb
 D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\bin\Release\itextsharp.dll
-D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\BreathingMachine.csprojResolveAssemblyReference.cache
 D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\BreathingMachine.Form1.resources
 D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\BreathingMachine.Form_About.resources
 D:\Users\Administrator\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\BreathingMachine.Form_AboutUs_English.resources

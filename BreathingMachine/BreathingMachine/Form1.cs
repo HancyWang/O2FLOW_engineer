@@ -4562,9 +4562,9 @@ namespace BreathingMachine
                 case 6:
                     str = lang.system_failure_E7();
                     break;
-                //case 7:
-                //    str = lang.system_failure();
-                //    break;
+                case 7:
+                    str = lang.system_failure_E8();
+                    break;
                 //case 8:
                 //    str = lang.system_failure();
                         //break;

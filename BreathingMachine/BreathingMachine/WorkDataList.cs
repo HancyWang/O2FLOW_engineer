@@ -113,7 +113,7 @@ namespace BreathingMachine
                             wd.set_atomiz_level = Convert.ToString(workDataMsg.SET_ATOMIZATION_LEVEL);
                             wd.set_atomiz_time = Convert.ToString(workDataMsg.SET_ATOMIZATION_TIME);
 
-                            wd.data_heating_plate_tmp = Convert.ToString(workDataMsg.DATA_HEATING_PLATE_ADC_H);
+                            wd.data_heating_plate_tmp = Convert.ToString(workDataMsg.DATA_HEATING_PLATE_TMP);
                             wd.data_env_tmp = Convert.ToString(workDataMsg.DATA_ENVIRONMENT_TMP);
                             wd.data_driveboard_tmp = Convert.ToString(workDataMsg.DATA_DRIVERBOARD_TMP);
                             wd.data_air_pressure = Convert.ToString(workDataMsg.DATA_AIR_PRESSURE);

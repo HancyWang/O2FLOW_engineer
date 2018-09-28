@@ -2750,11 +2750,11 @@ namespace BreathingMachine
         {
             if (m_language == LANGUAGE.CHINA)
             {
-                return "永胜宏碁数据分析软件";
+                return "永胜宏碁数据分析软件(服务商版本)";
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Vincent Medical Data Analyser Software";
+                return "Vincent Medical Data Analyser Software(Server Version)";
             }
             else
             {
