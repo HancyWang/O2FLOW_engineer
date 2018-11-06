@@ -606,7 +606,21 @@ namespace BreathingMachine
             else
             {
                 //如果工作信息文件没有，则使用报警文件的
-                FileStream fs = new FileStream(FileMngr.m_dirPath + @"\" + FileMngr.m_alarmFileName, FileMode.Open);
+
+                FileStream fs = null;
+                try
+                {
+                    fs = new FileStream(FileMngr.m_dirPath + @"\" + FileMngr.m_alarmFileName, FileMode.Open);
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+                finally
+                {
+
+                }
                 BinaryReader br = new BinaryReader(fs, Encoding.ASCII);
 
                 //读信息头
@@ -4112,7 +4126,20 @@ namespace BreathingMachine
             {
                 //工作信息文件缺失时，使用报警文件的
                 #region
-                FileStream fs = new FileStream(m_dirPath + @"\" + m_alarmFileName, FileMode.Open);
+                FileStream fs = null;
+                try
+                {
+                    fs = new FileStream(m_dirPath + @"\" + m_alarmFileName, FileMode.Open);
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+                finally
+                {
+
+                }
                 BinaryReader br = new BinaryReader(fs, Encoding.ASCII);
 
                 //读信息头
@@ -4182,13 +4209,21 @@ namespace BreathingMachine
             }
             else
             {
-                alarmFilePath = null;
+                //alarmFilePath = null;
+                m_alarmFileName = null;
             }
             
             var workDataFilePathes = Directory.GetFiles(m_dirPath, "DATA*.vmf");
             
             foreach (var file in workDataFilePathes)
             {
+                var name = file;
+                name = name.Substring(name.LastIndexOf(@"\") + 1);
+                if (name.Length != 16)
+                    continue;
+                System.IO.FileInfo fileInfo = new FileInfo(file);
+                if (fileInfo.Length <= 1088)
+                    continue;
                 m_workFileNameList.Add(file.Substring(file.LastIndexOf(@"\") + 1)); //将工作文件名添加到链表中
             }
         }
@@ -4375,11 +4410,25 @@ namespace BreathingMachine
                                     continue;
                                 }
                                 workDataMsg = GetObject<WORK_INFO_MESSAGE>(buffer_msg, len_msg);
+                                //2018.11.06发现文件数据中年月日不对，先给下位机做过滤
+                                if (workDataMsg.YEAR1 > 99 || workDataMsg.YEAR2 > 99 || workDataMsg.MONTH > 12 || workDataMsg.DAY > 31 ||
+                                    workDataMsg.HOUR > 23 || workDataMsg.MINUTE > 59 || workDataMsg.SECOND > 59)
+                                {
+                                    continue;
+                                }
                                 list.Add(workDataMsg);
-                                m_lastWorkMsg = workDataMsg;//保留最后一个工作信息，作为最新的信息，刷新到app基本信息中
+                                m_lastWorkMsg = workDataMsg;
+
+                                //workDataMsg = GetObject<WORK_INFO_MESSAGE>(buffer_msg, len_msg);
+                                //list.Add(workDataMsg);
+                                //m_lastWorkMsg = workDataMsg;//保留最后一个工作信息，作为最新的信息，刷新到app基本信息中
                             }
                         }
-                        m_workHead_Msg_Map[alarmHead] = list;
+                        //如果经过过滤之后，List的count不为0，才添加到链表中
+                        if (list.Count != 0)
+                        {
+                            m_workHead_Msg_Map[alarmHead] = list;
+                        }
                         //m_workHead_Msg_Map.Add(alarmHead,list);
                         fs.Close();
                         br.Close();
