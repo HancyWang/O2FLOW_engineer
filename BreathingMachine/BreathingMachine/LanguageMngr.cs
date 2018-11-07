@@ -2810,5 +2810,20 @@ namespace BreathingMachine
                 return "";
             }
         }
+        public static String no_data_in_the_time_span()
+        {
+            if (m_language == LANGUAGE.CHINA)
+            {
+                return "该时段没有数据！";
+            }
+            else if (m_language == LANGUAGE.ENGLISH)
+            {
+                return "No data in the time span!";
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }

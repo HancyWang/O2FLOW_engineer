@@ -3190,6 +3190,9 @@ namespace BreathingMachine
             {
                 if (WorkDataList.m_WorkData_List == null || WorkDataList.m_WorkData_List.Count == 0)
                 {
+                    textBox_listview_currentpage.Text = "";
+                    listView_workData.Items.Clear();
+                    MessageBox.Show(LanguageMngr.no_data_in_the_time_span());
                     return;
                 }
                 WorkDataList.m_nCurrentPage = currentPage;
@@ -3199,6 +3202,9 @@ namespace BreathingMachine
             {
                 if (WorkDataList.m_WorkData_Basic_List == null || WorkDataList.m_WorkData_Basic_List.Count == 0)
                 {
+                    textBox_listview_currentpage.Text = "";
+                    listView_workData.Items.Clear();
+                    MessageBox.Show(LanguageMngr.no_data_in_the_time_span());
                     return;
                 }
                 WorkDataList.m_nCurrentPage = currentPage;
