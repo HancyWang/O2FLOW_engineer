@@ -606,6 +606,10 @@ namespace BreathingMachine
             else
             {
                 //如果工作信息文件没有，则使用报警文件的
+                if (FileMngr.m_alarmFileName == null)
+                {
+                    return;
+                }
 
                 FileStream fs = null;
                 try
@@ -4126,6 +4130,11 @@ namespace BreathingMachine
             {
                 //工作信息文件缺失时，使用报警文件的
                 #region
+                if (m_alarmFileName == null)
+                {
+                    return;
+                }
+
                 FileStream fs = null;
                 try
                 {
