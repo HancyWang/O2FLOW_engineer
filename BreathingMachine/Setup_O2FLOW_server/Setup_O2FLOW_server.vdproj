@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_16E1095ABCAE4D50A86D8BF7CB87A901"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_31896BB1FA9F4DB14AC07225A0C5C42F"
         "OwnerKey" = "8:_AE6B2E3A32B24070B905B1A5F8C3C992"
         "MsmSig" = "8:_UNDEFINED"
@@ -57,14 +51,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_31896BB1FA9F4DB14AC07225A0C5C42F"
+        "MsmKey" = "8:_C2F6706D89074999981EF8E2D0F52A8B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_AE6B2E3A32B24070B905B1A5F8C3C992"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_31896BB1FA9F4DB14AC07225A0C5C42F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -85,6 +85,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -101,6 +109,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -130,26 +146,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_16E1095ABCAE4D50A86D8BF7CB87A901"
-            {
-            "SourcePath" = "8:..\\BreathingMachine\\Server.ico"
-            "TargetName" = "8:Server.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_204A1569267D4768AFFEE1D44C594466"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_31896BB1FA9F4DB14AC07225A0C5C42F"
             {
             "AssemblyRegister" = "3:1"
@@ -261,6 +257,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2F6706D89074999981EF8E2D0F52A8B"
+            {
+            "SourcePath" = "8:..\\..\\Server.ico"
+            "TargetName" = "8:Server.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_204A1569267D4768AFFEE1D44C594466"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -335,7 +351,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_16E1095ABCAE4D50A86D8BF7CB87A901"
+        "ARPPRODUCTICON" = "8:_C2F6706D89074999981EF8E2D0F52A8B"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -449,7 +465,7 @@
             "Target" = "8:_AE6B2E3A32B24070B905B1A5F8C3C992"
             "Folder" = "8:_C0A38662D9404985AAB00AB1CE2B50D7"
             "WorkingFolder" = "8:_204A1569267D4768AFFEE1D44C594466"
-            "Icon" = "8:_16E1095ABCAE4D50A86D8BF7CB87A901"
+            "Icon" = "8:_C2F6706D89074999981EF8E2D0F52A8B"
             "Feature" = "8:"
             }
         }

@@ -37,40 +37,44 @@
             // label_AboutUs_appName
             // 
             this.label_AboutUs_appName.AutoSize = true;
-            this.label_AboutUs_appName.Location = new System.Drawing.Point(125, 35);
+            this.label_AboutUs_appName.Location = new System.Drawing.Point(167, 44);
+            this.label_AboutUs_appName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_AboutUs_appName.Name = "label_AboutUs_appName";
-            this.label_AboutUs_appName.Size = new System.Drawing.Size(125, 12);
+            this.label_AboutUs_appName.Size = new System.Drawing.Size(157, 15);
             this.label_AboutUs_appName.TabIndex = 0;
             this.label_AboutUs_appName.Text = "永胜宏基数据分析软件";
             // 
             // label_AboutUs_appVersion
             // 
             this.label_AboutUs_appVersion.AutoSize = true;
-            this.label_AboutUs_appVersion.Location = new System.Drawing.Point(138, 70);
+            this.label_AboutUs_appVersion.Location = new System.Drawing.Point(184, 88);
+            this.label_AboutUs_appVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_AboutUs_appVersion.Name = "label_AboutUs_appVersion";
-            this.label_AboutUs_appVersion.Size = new System.Drawing.Size(95, 12);
+            this.label_AboutUs_appVersion.Size = new System.Drawing.Size(122, 15);
             this.label_AboutUs_appVersion.TabIndex = 1;
             this.label_AboutUs_appVersion.Text = "软件版本：1.1.0";
             // 
             // label_AboutUs_CompanyName
             // 
             this.label_AboutUs_CompanyName.AutoSize = true;
-            this.label_AboutUs_CompanyName.Location = new System.Drawing.Point(51, 106);
+            this.label_AboutUs_CompanyName.Location = new System.Drawing.Point(68, 132);
+            this.label_AboutUs_CompanyName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_AboutUs_CompanyName.Name = "label_AboutUs_CompanyName";
-            this.label_AboutUs_CompanyName.Size = new System.Drawing.Size(287, 12);
+            this.label_AboutUs_CompanyName.Size = new System.Drawing.Size(365, 15);
             this.label_AboutUs_CompanyName.TabIndex = 2;
             this.label_AboutUs_CompanyName.Text = "@2018-2026 东莞永胜宏基医疗器械有限公司版权所有";
             // 
             // Form_About
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 149);
+            this.ClientSize = new System.Drawing.Size(541, 186);
             this.Controls.Add(this.label_AboutUs_CompanyName);
             this.Controls.Add(this.label_AboutUs_appVersion);
             this.Controls.Add(this.label_AboutUs_appName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_About";
