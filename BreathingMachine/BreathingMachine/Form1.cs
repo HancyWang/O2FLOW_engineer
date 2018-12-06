@@ -1434,8 +1434,33 @@ namespace BreathingMachine
             
             strPath = folderBrowserDialog_saveFiles.SelectedPath;//获取打开的文件路径名
             //创建两个文件
-            FileStream fs_alarm = new FileStream(strPath + @"\" + "Alarm.csv", FileMode.Create);
-            FileStream fs_workData = new FileStream(strPath + @"\" + "WorkData.csv", FileMode.Create);
+            FileStream fs_alarm = null;
+            try
+            {
+                fs_alarm = new FileStream(strPath + @"\" + label_SN_Value.Text + "_Alarm.csv", FileMode.Create);
+            }
+            catch (IOException ex)
+            {
+                if (fs_alarm != null)
+                    fs_alarm.Close();
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+
+            FileStream fs_workData = null;
+            try
+            {
+                fs_workData = new FileStream(strPath + @"\" + label_SN_Value.Text + "_WorkData.csv", FileMode.Create);
+            }
+            catch (IOException ex)
+            {
+                if (fs_workData != null)
+                    fs_workData.Close();
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
             StreamWriter sw_alarm = new StreamWriter(fs_alarm, Encoding.GetEncoding("gb2312"));
             StreamWriter sw_workData = new StreamWriter(fs_workData, Encoding.GetEncoding("gb2312"));
 
