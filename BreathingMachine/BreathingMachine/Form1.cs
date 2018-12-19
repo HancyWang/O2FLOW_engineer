@@ -1434,10 +1434,23 @@ namespace BreathingMachine
             
             strPath = folderBrowserDialog_saveFiles.SelectedPath;//获取打开的文件路径名
             //创建两个文件
+            string alarm_str = "";
+            string workdata_str = "";
+            if (LanguageMngr.m_language == LANGUAGE.ENGLISH)
+            {
+                alarm_str = "_Alarm.csv";
+                workdata_str = "_WorkData.csv";
+            }
+            else if (LanguageMngr.m_language == LANGUAGE.CHINA)
+            {
+                alarm_str = "_报警数据.csv";
+                workdata_str = "_工作数据.csv";
+            }
+
             FileStream fs_alarm = null;
             try
             {
-                fs_alarm = new FileStream(strPath + @"\" + label_SN_Value.Text + "_Alarm.csv", FileMode.Create);
+                fs_alarm = new FileStream(strPath + @"\" + label_SN_Value.Text + alarm_str, FileMode.Create);
             }
             catch (IOException ex)
             {
@@ -1451,7 +1464,7 @@ namespace BreathingMachine
             FileStream fs_workData = null;
             try
             {
-                fs_workData = new FileStream(strPath + @"\" + label_SN_Value.Text + "_WorkData.csv", FileMode.Create);
+                fs_workData = new FileStream(strPath + @"\" + label_SN_Value.Text + workdata_str, FileMode.Create);
             }
             catch (IOException ex)
             {
