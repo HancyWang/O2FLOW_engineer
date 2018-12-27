@@ -37,17 +37,17 @@
             // label_AboutUs_appName
             // 
             this.label_AboutUs_appName.AutoSize = true;
-            this.label_AboutUs_appName.Location = new System.Drawing.Point(167, 44);
+            this.label_AboutUs_appName.Location = new System.Drawing.Point(179, 44);
             this.label_AboutUs_appName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_AboutUs_appName.Name = "label_AboutUs_appName";
-            this.label_AboutUs_appName.Size = new System.Drawing.Size(157, 15);
+            this.label_AboutUs_appName.Size = new System.Drawing.Size(137, 15);
             this.label_AboutUs_appName.TabIndex = 0;
-            this.label_AboutUs_appName.Text = "永胜宏基数据分析软件";
+            this.label_AboutUs_appName.Text = "O2FLO数据读取软件";
             // 
             // label_AboutUs_appVersion
             // 
             this.label_AboutUs_appVersion.AutoSize = true;
-            this.label_AboutUs_appVersion.Location = new System.Drawing.Point(184, 88);
+            this.label_AboutUs_appVersion.Location = new System.Drawing.Point(186, 88);
             this.label_AboutUs_appVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_AboutUs_appVersion.Name = "label_AboutUs_appVersion";
             this.label_AboutUs_appVersion.Size = new System.Drawing.Size(122, 15);
@@ -57,12 +57,12 @@
             // label_AboutUs_CompanyName
             // 
             this.label_AboutUs_CompanyName.AutoSize = true;
-            this.label_AboutUs_CompanyName.Location = new System.Drawing.Point(68, 132);
+            this.label_AboutUs_CompanyName.Location = new System.Drawing.Point(104, 132);
             this.label_AboutUs_CompanyName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_AboutUs_CompanyName.Name = "label_AboutUs_CompanyName";
-            this.label_AboutUs_CompanyName.Size = new System.Drawing.Size(365, 15);
+            this.label_AboutUs_CompanyName.Size = new System.Drawing.Size(311, 15);
             this.label_AboutUs_CompanyName.TabIndex = 2;
-            this.label_AboutUs_CompanyName.Text = "@2018-2026 东莞永胜宏基医疗器械有限公司版权所有";
+            this.label_AboutUs_CompanyName.Text = "Vincent Medical Manufacturing Co.,Ltd.";
             // 
             // Form_About
             // 
@@ -74,7 +74,7 @@
             this.Controls.Add(this.label_AboutUs_appName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_About";

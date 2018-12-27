@@ -174,7 +174,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Period Setting";
+                return "Time Setting";
             }
             else
             {
@@ -190,7 +190,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Startting Date";
+                return "Start Date";
             }
             else
             {
@@ -205,7 +205,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Ending Date";
+                return "End Date";
             }
             else
             {
@@ -458,7 +458,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Machine Type：";
+                return "Model No.：";
             }
             else
             {
@@ -474,7 +474,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Euipment Info";
+                return "Equipment Info";
             }
             else
             {
@@ -1018,7 +1018,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return Convert.ToBoolean(bt) ? "Child" : "Adault";
+                return Convert.ToBoolean(bt) ? "Paediatric" : "Adult";
             }
             else
             {
@@ -1151,7 +1151,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Set Adault or Child";
+                return "Set Adult or Paediatric";
             }
             else
             {
@@ -1275,7 +1275,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Oxy Concentration";
+                return "Oxygen Concentration";
             }
             else
             {
@@ -2539,7 +2539,7 @@ namespace BreathingMachine
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "child";
+                return "Paediatric";
             }
             else
             {
@@ -2750,11 +2750,11 @@ namespace BreathingMachine
         {
             if (m_language == LANGUAGE.CHINA)
             {
-                return "永胜宏碁数据分析软件(服务商版本)";
+                return "O2FLO数据读取软件(服务商版本)";
             }
             else if (m_language == LANGUAGE.ENGLISH)
             {
-                return "Vincent Medical Data Analyser Software(Server Version)";
+                return "O2FLO Data Reader(Server Version)";
             }
             else
             {

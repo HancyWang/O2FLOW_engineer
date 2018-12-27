@@ -7,8 +7,8 @@
     <ProjectGuid>{E93D6AD6-4536-4B40-B471-6AA952DDE33E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data_analyser</RootNamespace>
-    <AssemblyName>Data_analyser</AssemblyName>
+    <RootNamespace>O2FLO_server</RootNamespace>
+    <AssemblyName>O2FLO_server</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
