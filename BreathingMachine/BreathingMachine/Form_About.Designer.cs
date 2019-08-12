@@ -52,7 +52,7 @@
             this.label_AboutUs_appVersion.Name = "label_AboutUs_appVersion";
             this.label_AboutUs_appVersion.Size = new System.Drawing.Size(122, 15);
             this.label_AboutUs_appVersion.TabIndex = 1;
-            this.label_AboutUs_appVersion.Text = "软件版本：1.0.1";
+            this.label_AboutUs_appVersion.Text = "软件版本：1.0.2";
             // 
             // label_AboutUs_CompanyName
             // 

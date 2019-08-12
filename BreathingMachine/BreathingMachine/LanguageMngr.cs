@@ -2199,7 +2199,41 @@ namespace BreathingMachine
                 return "";
             }
         }
-   
+
+        //回路故障
+        public String Circuit_failure_data_cable_uninstalled()
+        {
+            if (m_language == LANGUAGE.CHINA)
+            {
+                return "回路故障/温度探头未安装";
+            }
+            else if (m_language == LANGUAGE.ENGLISH)
+            {
+                return "Circuit failure/data cable uninstalled";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        //泄露
+        public String Check_for_leaks()
+        {
+            if (m_language == LANGUAGE.CHINA)
+            {
+                return "泄露";
+            }
+            else if (m_language == LANGUAGE.ENGLISH)
+            {
+                return "Check for leaks";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
         //系统故障E1---氧浓度传感器故障
         public String system_failure_E1()
         {

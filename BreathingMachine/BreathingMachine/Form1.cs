@@ -4731,6 +4731,12 @@ namespace BreathingMachine
                 case 33://SD卡未安装
                     str = lang.sdCard_not_install();
                     break;
+                case 34:
+                    str = lang.Circuit_failure_data_cable_uninstalled();
+                    break;
+                case 35:
+                    str = lang.Check_for_leaks();
+                    break;
                 default:
                     //str = "未识别的错误";
                     str = lang.unknow_err();
