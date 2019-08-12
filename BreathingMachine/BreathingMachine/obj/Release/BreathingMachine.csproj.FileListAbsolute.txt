@@ -40,3 +40,4 @@ D:\Users\LENOVO\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachi
 D:\Users\LENOVO\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\BreathingMachine.csproj.CopyComplete
 D:\Users\LENOVO\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\O2FLO_server.exe
 D:\Users\LENOVO\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\O2FLO_server.pdb
+D:\Users\LENOVO\Documents\GitHub\O2FLOW_engineer\BreathingMachine\BreathingMachine\obj\Release\BreathingMachine.csprojAssemblyReference.cache

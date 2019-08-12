@@ -4302,7 +4302,7 @@ namespace BreathingMachine
 
         public static bool IsErrCodeInRange(ref byte[] buffer_msg)
         {
-            if (buffer_msg[8] < 8 || (buffer_msg[8] >= 20 && buffer_msg[8] <= 32))
+            if (buffer_msg[8] < 8 || (buffer_msg[8] >= 20 && buffer_msg[8] <= 255))
             {
                 return true;
             }
