@@ -617,7 +617,8 @@ namespace BreathingMachine
             if (FileMngr.m_workFileNameList.Count != 0)
             {
                 //优先使用工作信息的
-                byte[] head = FileMngr.GetData(FileMngr.m_lastWorkHead);
+                //byte[] head = FileMngr.GetData(FileMngr.m_lastWorkHead);
+                byte[] head = FileMngr.VM_transfer_workInfoHead2Buffer(FileMngr.m_lastWorkHead);
                 this.label_equipType_Value.Text = DataMngr.GetMachineType(head, 1);
                 this.label_SN_Value.Text = DataMngr.GetSN(head, 2);
                 this.label_softwarVer_Value.Text = DataMngr.GetSoftwareVer(head, 3);
@@ -648,7 +649,8 @@ namespace BreathingMachine
 
                 //读信息头
                 ALARM_INFO_HEAD alarmHead = new ALARM_INFO_HEAD();
-                int len_head = Marshal.SizeOf(alarmHead);
+                //int len_head = Marshal.SizeOf(alarmHead);
+                int len_head = 16 * 16; //16个数据，每个16字节
                 byte[] head = new byte[len_head];
                 br.Read(head, 0, len_head);
 
@@ -3947,28 +3949,28 @@ namespace BreathingMachine
 
                 //填充工作信息头
                 #region
-                WORK_INFO_HEAD workHead = new WORK_INFO_HEAD();
-                workHead.WORK_FLAG = "8DATA" + strData;//没加校验
-                workHead.WORK_FLAG.PadRight(64, '0');
-                workHead.MACHINETYPE = (Convert.ToChar(0x06)+"VUN002000").PadRight(64, '0');
-                workHead.SN = (Convert.ToChar(0x09)+"1700002342").PadRight(64, '0');
-                workHead.SOFTWAR_VER = (""+Convert.ToChar(0x03)+Convert.ToChar(0x01)+Convert.ToChar(0x01)+Convert.ToChar(0x01)).PadRight(64, '0');
-                //workHead.SOFTWAR_VER = ("" + Convert.ToChar(0x03) + "111").PadRight(64, '0');
-                workHead.RESERVE_0 = "".PadRight(64, '0');
-                workHead.RESERVE_1 = "".PadRight(64, '0');
-                workHead.RESERVE_2 = "".PadRight(64, '0');
-                workHead.RESERVE_3 = "".PadRight(64, '0');
-                workHead.RESERVE_4 = "".PadRight(64, '0');
-                workHead.RESERVE_5 = "".PadRight(64, '0');
-                workHead.RESERVE_6 = "".PadRight(64, '0');
-                workHead.RESERVE_7 = "".PadRight(64, '0');
-                workHead.RESERVE_8 = "".PadRight(64, '0');
-                workHead.RESERVE_9 = "".PadRight(64, '0');
-                workHead.RESERVE_10 = "".PadRight(64, '0');
-                workHead.WORKDATA_NUM = "45678912".PadRight(64, '0');
+                //WORK_INFO_HEAD workHead = new WORK_INFO_HEAD();
+                //workHead.WORK_FLAG = "8DATA" + strData;//没加校验
+                //workHead.WORK_FLAG.PadRight(64, '0');
+                //workHead.MACHINETYPE = (Convert.ToChar(0x06)+"VUN002000").PadRight(64, '0');
+                //workHead.SN = (Convert.ToChar(0x09)+"1700002342").PadRight(64, '0');
+                //workHead.SOFTWAR_VER = (""+Convert.ToChar(0x03)+Convert.ToChar(0x01)+Convert.ToChar(0x01)+Convert.ToChar(0x01)).PadRight(64, '0');
+                ////workHead.SOFTWAR_VER = ("" + Convert.ToChar(0x03) + "111").PadRight(64, '0');
+                //workHead.RESERVE_0 = "".PadRight(64, '0');
+                //workHead.RESERVE_1 = "".PadRight(64, '0');
+                //workHead.RESERVE_2 = "".PadRight(64, '0');
+                //workHead.RESERVE_3 = "".PadRight(64, '0');
+                //workHead.RESERVE_4 = "".PadRight(64, '0');
+                //workHead.RESERVE_5 = "".PadRight(64, '0');
+                //workHead.RESERVE_6 = "".PadRight(64, '0');
+                //workHead.RESERVE_7 = "".PadRight(64, '0');
+                //workHead.RESERVE_8 = "".PadRight(64, '0');
+                //workHead.RESERVE_9 = "".PadRight(64, '0');
+                //workHead.RESERVE_10 = "".PadRight(64, '0');
+                //workHead.WORKDATA_NUM = "45678912".PadRight(64, '0');
 
-                var buff = GetData(workHead);
-                bw.Write(buff, 0, Marshal.SizeOf(workHead));
+                //var buff = GetData(workHead);
+                //bw.Write(buff, 0, Marshal.SizeOf(workHead));
                 #endregion
 
                 Random rnd = new Random();
@@ -4079,27 +4081,27 @@ namespace BreathingMachine
 
                 //填充报警信息头
                 #region
-                ALARM_INFO_HEAD alarmHead = new ALARM_INFO_HEAD();
-                alarmHead.ALARM_FLAG = (Convert.ToChar(0x05)+"ALARM89").PadRight(16, '0');
-                alarmHead.MACHINETYPE = (Convert.ToChar(0x06)+"VUN002").PadRight(16, '0');
-                alarmHead.SN = (Convert.ToChar(0x09)+"1700002342").PadRight(16, '0');
-                alarmHead.SOFTWAR_VER = ("" + Convert.ToChar(0x03) + Convert.ToChar(0x01) + Convert.ToChar(0x01) + Convert.ToChar(0x01)).PadRight(16, '0');
-                //alarmHead.SOFTWAR_VER = ("" + Convert.ToChar(0x03) + "111").PadRight(16, '0');    
-                alarmHead.RESERVE_0 = "".PadRight(16, '0');
-                alarmHead.RESERVE_1 = "".PadRight(16, '0');
-                alarmHead.RESERVE_2 = "".PadRight(16, '0');
-                alarmHead.RESERVE_3 = "".PadRight(16, '0');
-                alarmHead.RESERVE_4 = "".PadRight(16, '0');
-                alarmHead.RESERVE_5 = "".PadRight(16, '0');
-                alarmHead.RESERVE_6 = "".PadRight(16, '0');
-                alarmHead.RESERVE_7 = "".PadRight(16, '0');
-                alarmHead.RESERVE_8 = "".PadRight(16, '0');
-                alarmHead.RESERVE_9 = "".PadRight(16, '0');
-                alarmHead.RESERVE_10 = "".PadRight(16, '0');
-                alarmHead.ALARM_NUM = "9874545".PadRight(16, '0');
+                //ALARM_INFO_HEAD alarmHead = new ALARM_INFO_HEAD();
+                //alarmHead.ALARM_FLAG = (Convert.ToChar(0x05)+"ALARM89").PadRight(16, '0');
+                //alarmHead.MACHINETYPE = (Convert.ToChar(0x06)+"VUN002").PadRight(16, '0');
+                //alarmHead.SN = (Convert.ToChar(0x09)+"1700002342").PadRight(16, '0');
+                //alarmHead.SOFTWAR_VER = ("" + Convert.ToChar(0x03) + Convert.ToChar(0x01) + Convert.ToChar(0x01) + Convert.ToChar(0x01)).PadRight(16, '0');
+                ////alarmHead.SOFTWAR_VER = ("" + Convert.ToChar(0x03) + "111").PadRight(16, '0');    
+                //alarmHead.RESERVE_0 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_1 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_2 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_3 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_4 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_5 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_6 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_7 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_8 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_9 = "".PadRight(16, '0');
+                //alarmHead.RESERVE_10 = "".PadRight(16, '0');
+                //alarmHead.ALARM_NUM = "9874545".PadRight(16, '0');
 
-                var buff = GetData(alarmHead);
-                bw.Write(buff, 0, Marshal.SizeOf(alarmHead));
+                //var buff = GetData(alarmHead);
+                //bw.Write(buff, 0, Marshal.SizeOf(alarmHead));
                 #endregion
 
                 Random rnd = new Random();
@@ -4223,7 +4225,8 @@ namespace BreathingMachine
 
                 //读信息头
                  ALARM_INFO_HEAD alarmHead = new ALARM_INFO_HEAD();
-                int len_head = Marshal.SizeOf(alarmHead);
+                //int len_head = Marshal.SizeOf(alarmHead);
+                int len_head = 16 * 16; //16个数据，每个16字节
                 byte[] buffer = new byte[len_head];
                 br.Read(buffer, 0, len_head);
 
@@ -4325,7 +4328,8 @@ namespace BreathingMachine
             BinaryReader br = new BinaryReader(fs, Encoding.ASCII);
 
             ALARM_INFO_HEAD alarmHead = new ALARM_INFO_HEAD();
-            int len_head = Marshal.SizeOf(alarmHead);
+            //int len_head = Marshal.SizeOf(alarmHead);
+            int len_head = 16 * 16; //16个数据，每个16字节
             byte[] buffer = new byte[len_head];
 
             if (fs == null)
@@ -4343,7 +4347,8 @@ namespace BreathingMachine
             //if (VerifyField(buffer))   //这里校验是失败的，为了打开文件将条件屏蔽
             if (true)
             {
-                m_alarmHead = GetObject<ALARM_INFO_HEAD>(buffer, len_head); //将信息头放入m_alarmHead中
+                //m_alarmHead = GetObject<ALARM_INFO_HEAD>(buffer, len_head); //将信息头放入m_alarmHead中
+                m_alarmHead = VM_transfer_alarmInfoHead(buffer);
                 //debug
                 //MessageBox.Show("校验成功！");
 
@@ -4394,24 +4399,237 @@ namespace BreathingMachine
             }
 
         }
-
-        public static byte[] GetData(object obj)
+        public static WORK_INFO_HEAD VM_transfer_workInfoHead(byte[] buffer)
         {
-            int size = Marshal.SizeOf(obj.GetType());
-            byte[] data = new byte[size];
-            IntPtr ptr = Marshal.AllocHGlobal(size);
-
-            try
+            WORK_INFO_HEAD dst = new WORK_INFO_HEAD();
+            int CNT = 64;
+            for (int i = 0; i < CNT; i++)
             {
-                Marshal.StructureToPtr(obj, ptr, true);
-                Marshal.Copy(ptr, data, 0, size);
-                return data;
+                dst.WORK_FLAG[i] = buffer[i + CNT * 0];
             }
-            finally
+            for (int i = 0; i < CNT; i++)
             {
-                Marshal.FreeHGlobal(ptr);
+                dst.MACHINETYPE[i] = buffer[i + CNT * 1];
             }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.SN[i] = buffer[i + CNT * 2];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.SOFTWAR_VER[i] = buffer[i + CNT * 3];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_0[i] = buffer[i + CNT * 4];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_1[i] = buffer[i + CNT * 5];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_2[i] = buffer[i + CNT * 6];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_3[i] = buffer[i + CNT * 7];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_4[i] = buffer[i + CNT * 8];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_5[i] = buffer[i + CNT * 9];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_6[i] = buffer[i + CNT * 10];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_7[i] = buffer[i + CNT * 11];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_8[i] = buffer[i + CNT * 12];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_9[i] = buffer[i + CNT * 13];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_10[i] = buffer[i + CNT * 14];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.WORKDATA_NUM[i] = buffer[i + CNT * 15];
+            }
+            return dst;
         }
+
+        public static ALARM_INFO_HEAD VM_transfer_alarmInfoHead(byte[] buffer)
+        {
+            ALARM_INFO_HEAD dst = new ALARM_INFO_HEAD();
+            int CNT = 16;
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.ALARM_FLAG[i] = buffer[i + CNT * 0];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.MACHINETYPE[i] = buffer[i + CNT * 1];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.SN[i] = buffer[i + CNT * 2];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.SOFTWAR_VER[i] = buffer[i + CNT * 3];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_0[i] = buffer[i + CNT * 4];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_1[i] = buffer[i + CNT * 5];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_2[i] = buffer[i + CNT * 6];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_3[i] = buffer[i + CNT * 7];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_4[i] = buffer[i + CNT * 8];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_5[i] = buffer[i + CNT * 9];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_6[i] = buffer[i + CNT * 10];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_7[i] = buffer[i + CNT * 11];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_8[i] = buffer[i + CNT * 12];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_9[i] = buffer[i + CNT * 13];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.RESERVE_10[i] = buffer[i + CNT * 14];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                dst.ALARM_NUM[i] = buffer[i + CNT * 15];
+            }
+            return dst;
+        }
+
+
+        public static byte[] VM_transfer_workInfoHead2Buffer(WORK_INFO_HEAD head)
+        {
+            byte[] buffer = new byte[Marshal.SizeOf(head) * 16];
+            int CNT = 64;
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 0] = head.WORK_FLAG[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 1] = head.MACHINETYPE[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 2] = head.SN[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 3] = head.SOFTWAR_VER[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 4] = head.RESERVE_0[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 5] = head.RESERVE_1[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 6] = head.RESERVE_2[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 7] = head.RESERVE_3[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 8] = head.RESERVE_4[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 9] = head.RESERVE_5[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 10] = head.RESERVE_6[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 11] = head.RESERVE_7[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 12] = head.RESERVE_8[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 13] = head.RESERVE_9[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 14] = head.RESERVE_10[i];
+            }
+            for (int i = 0; i < CNT; i++)
+            {
+                buffer[i + CNT * 15] = head.WORKDATA_NUM[i];
+            }
+
+            return buffer;
+        }
+        //public static byte[] GetData(object obj)
+        //{
+        //    int size = Marshal.SizeOf(obj.GetType());
+        //    byte[] data = new byte[size];
+        //    IntPtr ptr = Marshal.AllocHGlobal(size);
+
+        //    try
+        //    {
+        //        Marshal.StructureToPtr(obj, ptr, true);
+        //        Marshal.Copy(ptr, data, 0, size);
+        //        return data;
+        //    }
+        //    finally
+        //    {
+        //        Marshal.FreeHGlobal(ptr);
+        //    }
+        //}
 
         public static bool IsByte0x00(byte[] buffer_msg)
         {
@@ -4436,7 +4654,8 @@ namespace BreathingMachine
                 BinaryReader br = new BinaryReader(fs, Encoding.ASCII);
                 
                 WORK_INFO_HEAD alarmHead = new WORK_INFO_HEAD();
-                int len_head = Marshal.SizeOf(alarmHead);
+                //int len_head = Marshal.SizeOf(alarmHead);
+                int len_head = 64 * 16; //16个数据，每个64字节
                 byte[] buffer = new byte[len_head];
                 #region
                 if (fs == null)
@@ -4453,8 +4672,9 @@ namespace BreathingMachine
                     
                     m_workFileName_CanBeOpened_List.Add(workFile);
                     br.Read(buffer, 0, len_head);
-                    alarmHead = GetObject<WORK_INFO_HEAD>(buffer, len_head);
-                    m_lastWorkHead = alarmHead;         //保留最后一个工作信息头，作为最新的信息头，刷新到app基本信息中
+                    //alarmHead = GetObject<WORK_INFO_HEAD>(buffer, len_head);
+                    //m_lastWorkHead = alarmHead;         //保留最后一个工作信息头，作为最新的信息头，刷新到app基本信息中
+                    m_lastWorkHead = VM_transfer_workInfoHead(buffer);
                     #region
                     //记得到时候取消屏蔽
                     //if (!VerifyField(buffer))   //为了打开文件将校验屏蔽掉

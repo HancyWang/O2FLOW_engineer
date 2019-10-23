@@ -405,72 +405,89 @@ namespace BreathingMachine
     }
 
     [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, CharSet = System.Runtime.InteropServices.CharSet.Ansi)]
-    public struct ALARM_INFO_HEAD
+    public class ALARM_INFO_HEAD
     {
+        public byte[] ALARM_FLAG = new byte[16];
+        public byte[] MACHINETYPE = new byte[16];
+        public byte[] SN = new byte[16];
+        public byte[] SOFTWAR_VER = new byte[16];
+        public byte[] RESERVE_0 = new byte[16];
+        public byte[] RESERVE_1 = new byte[16];
+        public byte[] RESERVE_2 = new byte[16];
+        public byte[] RESERVE_3 = new byte[16];
+        public byte[] RESERVE_4 = new byte[16];
+        public byte[] RESERVE_5 = new byte[16];
+        public byte[] RESERVE_6 = new byte[16];
+        public byte[] RESERVE_7 = new byte[16];
+        public byte[] RESERVE_8 = new byte[16];
+        public byte[] RESERVE_9 = new byte[16];
+        public byte[] RESERVE_10 = new byte[16];
+        public byte[] ALARM_NUM = new byte[16];
+        #region
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string ALARM_FLAG;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string ALARM_FLAG;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string MACHINETYPE;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string MACHINETYPE;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string SN;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string SN;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string SOFTWAR_VER;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string SOFTWAR_VER;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_0;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_0;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_1;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_1;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_2;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_2;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_3;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_3;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_4;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_4;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_5;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_5;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_6;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_6;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_7;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_7;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_8;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_8;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_9;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_9;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string RESERVE_10;
 
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string RESERVE_10;
-
-        /// char[16]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string ALARM_NUM;
+        ///// char[16]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 16)]
+        //public string ALARM_NUM;
+        #endregion
     }
 
     [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]
@@ -527,72 +544,90 @@ namespace BreathingMachine
     }
 
     [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, CharSet = System.Runtime.InteropServices.CharSet.Ansi)]
-    public struct WORK_INFO_HEAD
+    public class WORK_INFO_HEAD
     {
+        public byte[] WORK_FLAG = new byte[64];
+        public byte[] MACHINETYPE = new byte[64];
+        public byte[] SN = new byte[64];
+        public byte[] SOFTWAR_VER = new byte[64];
+        public byte[] RESERVE_0 = new byte[64];
+        public byte[] RESERVE_1 = new byte[64];
+        public byte[] RESERVE_2 = new byte[64];
+        public byte[] RESERVE_3 = new byte[64];
+        public byte[] RESERVE_4 = new byte[64];
+        public byte[] RESERVE_5 = new byte[64];
+        public byte[] RESERVE_6 = new byte[64];
+        public byte[] RESERVE_7 = new byte[64];
+        public byte[] RESERVE_8 = new byte[64];
+        public byte[] RESERVE_9 = new byte[64];
+        public byte[] RESERVE_10 = new byte[64];
+        public byte[] WORKDATA_NUM = new byte[64];
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string WORK_FLAG;
+        #region
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string WORK_FLAG;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string MACHINETYPE;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string MACHINETYPE;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string SN;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string SN;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string SOFTWAR_VER;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string SOFTWAR_VER;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_0;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_0;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_1;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_1;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_2;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_2;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_3;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_3;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_4;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_4;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_5;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_5;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_6;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_6;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_7;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_7;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_8;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_8;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_9;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_9;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string RESERVE_10;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string RESERVE_10;
 
-        /// char[]
-        [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
-        public string WORKDATA_NUM;
+        ///// char[]
+        //[System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 64)]
+        //public string WORKDATA_NUM;
+        #endregion
     }
 
     [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]

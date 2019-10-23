@@ -31,7 +31,8 @@ namespace BreathingMachine
         
         public static void GetMachineTpye()
         {
-            byte[] head = FileMngr.GetData(FileMngr.m_lastWorkHead);
+            //byte[] head = FileMngr.GetData(FileMngr.m_lastWorkHead);
+            byte[] head = FileMngr.VM_transfer_workInfoHead2Buffer(FileMngr.m_lastWorkHead);
             var machineType = DataMngr.GetMachineType(head, 1);
             if(machineType=="VUN001")
             {
