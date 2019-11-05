@@ -4544,6 +4544,10 @@ namespace BreathingMachine
 
         public static byte[] VM_transfer_workInfoHead2Buffer(WORK_INFO_HEAD head)
         {
+            if (head == null)
+            {
+                return null;
+            }
             byte[] buffer = new byte[Marshal.SizeOf(head) * 16];
             int CNT = 64;
             for (int i = 0; i < CNT; i++)
