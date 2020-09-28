@@ -513,9 +513,14 @@ namespace BreathingMachine
                 chartArea_common.AxisY.Maximum = 90;
                 chartArea_common.AxisY.Interval = 10;
             }
-            else if(chartType==CHARTTYPE.DEWPOINT_TMP)  // 2018/7/20 新增
+            else if (chartType == CHARTTYPE.DEWPOINT_TMP)  // 2020-09-28,露点温度"0-50"
             {
-                chartArea_common.AxisY.Maximum = 80;
+                chartArea_common.AxisY.Maximum = 50;
+                chartArea_common.AxisY.Interval = 0;
+            }
+            else if (chartType == CHARTTYPE.OXY_CONCENTRATION) //2020-09-28,氧浓度"0-100"
+            {
+                chartArea_common.AxisY.Maximum = 100;
                 chartArea_common.AxisY.Interval = 0;
             }
             else
@@ -4304,7 +4309,7 @@ namespace BreathingMachine
                 if (name.Length != 16)
                     continue;
                 System.IO.FileInfo fileInfo = new FileInfo(file);
-                if (fileInfo.Length <= 1088)
+                if (fileInfo.Length < 1088)
                     continue;
                 m_workFileNameList.Add(file.Substring(file.LastIndexOf(@"\") + 1)); //将工作文件名添加到链表中
             }
